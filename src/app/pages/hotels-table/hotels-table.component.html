@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Liste des hôtels</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+              <th>Nom</th>
+              <th>Description</th>
+              <th>Adresse</th>
+              <th>Étoiles</th>
+              <th>Téléphone</th>
+              <th class="text-right">Modifier</th>
+              <th class="text-right">Supprimer</th>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let h of hotels">
+                <td>{{ h.name }}</td>
+                <td>{{ h.description }}</td>
+                <td>{{ h.address }}</td>
+                <td>{{ h.stars }}</td>
+                <td>{{ h.phone }}</td>
+
+                <td class="text-right">
+                  <button class="btn btn-sm btn-outline-warning btn-round btn-icon"><i class="fa fa-edit"></i></button>
+                </td>
+
+                <td class="text-right"> 
+                  <button class="btn btn-sm btn-outline-danger btn-round btn-icon"><i class="fa fa-trash"></i></button>
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
