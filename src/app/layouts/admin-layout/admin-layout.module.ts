@@ -21,6 +21,8 @@ import { UpdateHotelComponent } from "../../pages/update-hotel/update-hotel.comp
 
 
 
+
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -42,7 +44,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HotelsTableComponent,
     UsersTableComponent,
     ReservationsTableComponent,
-    UpdateHotelComponent
+    UpdateHotelComponent,
   ]
 })
 

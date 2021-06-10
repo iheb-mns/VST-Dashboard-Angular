@@ -14,6 +14,7 @@ import { ReservationsTableComponent } from "../../pages/reservations-table/reser
 import { UpdateHotelComponent } from "../../pages/update-hotel/update-hotel.component";
 
 
+
 export const AdminLayoutRoutes: Routes = [
   { path: "dashboard", component: DashboardComponent },
   { path: "user", component: UserComponent },

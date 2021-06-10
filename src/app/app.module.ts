@@ -1,7 +1,9 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
+import { AuthInterceptor } from '../app/http-interceptors/authconfig.interceptor';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
@@ -16,18 +18,30 @@ import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { TestComponent } from './pages/test/test.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent,    
+    SigninComponent,
+    SignupComponent,
+    UserProfileComponent,
+    AdminLayoutComponent,
+    TestComponent,
 
   ],
   imports: [
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
@@ -40,7 +54,13 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
       useHash: true
     }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
