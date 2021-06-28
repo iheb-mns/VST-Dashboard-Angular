@@ -31,4 +31,19 @@ export class HotelsTableComponent implements OnInit {
         });
   }
 
+  deleteHotel(id: number) {
+    if(confirm('Voulez-vous vraiment supprimer ?')) {
+      this.hotelService.delete(id).subscribe(
+        result => {
+          console.log(result);
+          if ( ! result.error) {
+            this.hotels = this.hotels.filter(item => item.id != id)
+          } else {
+            alert('Quelque chose sest mal passé !');
+          }
+        }
+      )
+    }
+}
+
 }

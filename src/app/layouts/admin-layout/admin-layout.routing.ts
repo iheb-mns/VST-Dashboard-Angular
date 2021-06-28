@@ -12,6 +12,8 @@ import { HotelsTableComponent } from "../../pages/hotels-table/hotels-table.comp
 import { UsersTableComponent } from "../../pages/users-table/users-table.component";
 import { ReservationsTableComponent } from "../../pages/reservations-table/reservations-table.component";
 import { UpdateHotelComponent } from "../../pages/update-hotel/update-hotel.component";
+import { AddHotelComponent } from '../../pages/add-hotel/add-hotel.component';
+
 
 
 
@@ -27,6 +29,8 @@ export const AdminLayoutRoutes: Routes = [
   { path: "hotels", component: HotelsTableComponent },
   { path: "users", component: UsersTableComponent },
   { path: "reservations", component: ReservationsTableComponent },
-  { path: "update-hotel", component: UpdateHotelComponent },
+  { path: "update-hotel/:id", component: UpdateHotelComponent },
+  { path: "add-hotel", component: AddHotelComponent },
+
 
 ];

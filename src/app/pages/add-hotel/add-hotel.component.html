@@ -1,0 +1,131 @@
+<div class="col-md-8">
+    <div class="edit-form">
+    <div class="card card-user">
+        <div class="card-header">
+            <h5 class="card-title">Ajouter un hôtel</h5>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-4 pl-1">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" class="form-control"  name="Nom" id="name" 
+                            required [(ngModel)]="hotel.name" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                        <div class="form-group">
+                            <label>Ville</label>
+                            <input list="ville" class="form-control">
+                            <datalist id="ville">
+                                <option value="Tunis">
+                                    <option value="Sfax">
+                                    <option value="Sousse">
+                                    <option value="Kairouan">
+                                    <option value="Bizerte">
+                                    <option value="Gabes">
+                                    <option value="Ariana">
+                                    <option value="Gafsa">
+                                    <option value="Monastir">
+                                    <option value="Kasserine">
+                                    <option value="Medenine">
+                                    <option value="Nabeul">
+                                    <option value="Tataouine">
+                                    <option value="Béja">
+                                    <option value="Le Kef">
+                                    <option value="Mahdia">
+                                    <option value="Jendouba">
+                                    <option value="Tozeur">
+                                    <option value="La Manouba">
+                                    <option value="Siliana">
+                                    <option value="Kébili">
+                                    <option value="Zaghouan">
+                                    <option value="Ben Arous">
+                            </datalist>                        
+                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Adresse</label>
+                            <input type="text" class="form-control"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                            <label>Nombre des chambres</label>
+                            <input type="number" class="form-control" value="Melbourne" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 px-1">
+                        <div class="form-group">
+                            <label>Etoiles</label>
+                            <input type="number" class="form-control" name="Stars" min="1" max="5"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                            <label>Numéro telephone</label>
+                            <input type="number" class="form-control"  name="Phone" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                            <label>Prix minimum</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 px-1">
+                        <div class="form-group">
+                            <label>Prix maximum</label>
+                            <input type="text" class="form-control" name="Stars" />
+                        </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                            <label>Disponibilité</label>
+                            <input list="dispo" class="form-control">
+                            <datalist id="dispo">
+                              <option value="Disponible">
+                              <option value="Indisponible">
+                            </datalist>                    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Desctiption</label>
+                            <textarea class="form-control textarea" name="Description">
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" class="btn btn-primary btn-round" (click)="saveHotel()">
+                            Ajouter
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

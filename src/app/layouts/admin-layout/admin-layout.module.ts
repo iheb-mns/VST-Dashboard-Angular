@@ -18,6 +18,7 @@ import { HotelsTableComponent } from "../../pages/hotels-table/hotels-table.comp
 import { UsersTableComponent } from "../../pages/users-table/users-table.component";
 import { ReservationsTableComponent } from "../../pages/reservations-table/reservations-table.component";
 import { UpdateHotelComponent } from "../../pages/update-hotel/update-hotel.component";
+import { AddHotelComponent } from '../../pages/add-hotel/add-hotel.component';
 
 
 
@@ -45,6 +46,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UsersTableComponent,
     ReservationsTableComponent,
     UpdateHotelComponent,
+    AddHotelComponent,
   ]
 })
 

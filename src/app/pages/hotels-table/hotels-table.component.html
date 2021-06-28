@@ -26,11 +26,11 @@
                 <td>{{ h.phone }}</td>
 
                 <td class="text-right">
-                  <button class="btn btn-sm btn-outline-warning btn-round btn-icon"><i class="fa fa-edit"></i></button>
+                  <button class="btn btn-sm btn-outline-warning btn-round btn-icon" [routerLink]="['/update-hotel', h.id]"><i class="fa fa-edit"></i></button>
                 </td>
 
                 <td class="text-right"> 
-                  <button class="btn btn-sm btn-outline-danger btn-round btn-icon"><i class="fa fa-trash"></i></button>
+                  <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="deleteHotel(h.id)"><i class="fa fa-trash"></i></button>
                 </td>
                 
               </tr>
