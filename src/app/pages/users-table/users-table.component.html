@@ -1,1 +1,34 @@
-<p>users-table works!</p>
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Liste des hôtels</h4>
+          
+        </div>
+        
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <th>Nom</th>
+                <th>Email</th> 
+                <th class="text-right">Supprimer</th>
+              </thead>
+  
+              <tbody>
+                <tr *ngFor="let u of users">
+                  <td>{{ u.name }}</td>
+                  <td>{{ u.email }}</td>
+                
+                  <td class="text-right"> 
+                    <button class="btn btn-sm btn-outline-danger btn-round btn-icon" (click)="deleteUser(u._id)"><i class="fa fa-trash"></i></button>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

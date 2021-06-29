@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Hotel } from '../../models/hotel.model';
 import { HotelService } from '../../services/hotel.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from "ngx-toastr";
 
 
 @Component({
@@ -17,7 +17,8 @@ export class UpdateHotelComponent implements OnInit {
   constructor(
     private hotelService: HotelService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.message='';
@@ -51,6 +52,20 @@ export class UpdateHotelComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  showNotification(from, align) {
+    this.toastr.success(
+      '<span data-notify="icon" class="nc-icon nc-bell-55"></span><span data-notify="message">Hôtel a été modifié avec succès.</span>',
+        "",
+        {
+          timeOut: 4000,
+          closeButton: true,
+          enableHtml: true,
+          toastClass: "alert alert-info alert-with-icon",
+          positionClass: "toast-" + from + "-" + align
+        }
+      );
   }
 
 }

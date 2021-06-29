@@ -20,23 +20,23 @@ export const AppRoutes: Routes = [
     path: "",
     redirectTo: "dashboard",
     pathMatch: "full", 
-    canActivate: [AuthGuard]
+    //canActivate: [AuthGuard]
   },
   {
-    path: "", canActivate: [AuthGuard],
+    path: "", //canActivate: [AuthGuard],
     component: AdminLayoutComponent,
     children: [
       {
         path: "",
         loadChildren:
-          "./layouts/admin-layout/admin-layout.module#AdminLayoutModule", canActivate: [AuthGuard]
+          "./layouts/admin-layout/admin-layout.module#AdminLayoutModule", //canActivate: [AuthGuard]
       },
       
     ],
   },
   {
     path: "**",
-    redirectTo: "dashboard", canActivate: [AuthGuard]
+    redirectTo: "dashboard", //canActivate: [AuthGuard]
   },
 
 ];

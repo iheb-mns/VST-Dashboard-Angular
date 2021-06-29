@@ -81,4 +81,12 @@ export class AuthService {
     }
     return throwError(msg);
   }
+
+  getAllUsers(): Observable<any> {
+    return this.http.get<User[]>(this.endpoint);
+  }
+
+  deleteUser(id: any): Observable<any> {
+    return this.http.delete(`${this.endpoint}/delete-user/${id}`);
+  }
 }

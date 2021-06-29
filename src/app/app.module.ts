@@ -1,9 +1,11 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { AuthInterceptor } from '../app/http-interceptors/authconfig.interceptor';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
@@ -39,10 +41,10 @@ import { TestComponent } from './pages/test/test.component';
 
   ],
   imports: [
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
+    HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
     SidebarModule,

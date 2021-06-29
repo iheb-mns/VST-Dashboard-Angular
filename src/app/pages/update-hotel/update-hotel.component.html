@@ -65,11 +65,10 @@
                 </div>
                 <div class="row">
                     <div class="update ml-auto mr-auto">
-                        <button type="submit" class="btn btn-primary btn-round" (click)="updateHotel()">
+                        <button class="btn btn-primary btn-block"
+                            (click)="updateHotel(); showNotification('top', 'center')">
                             Mettre à jour
                         </button>
-                        <p>{{ message }}</p>
-                        
                     </div>
                     
                 </div>

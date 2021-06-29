@@ -1,131 +1,137 @@
 <div class="col-md-8">
     <div class="edit-form">
-    <div class="card card-user">
-        <div class="card-header">
-            <h5 class="card-title">Ajouter un hôtel</h5>
-        </div>
-        <div class="card-body">
-            <form>
-                <div class="row">
-                    <div class="col-md-4 pl-1">
-                        
+        <div class="card card-user">
+            <div class="card-header">
+                <h5 class="card-title">Ajouter un hôtel</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="hotelForm">
+                    <div class="row">
+                        <div class="col-md-4 pl-1"></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 pr-1">
-                        <div class="form-group">
-                            <label>Nom</label>
-                            <input type="text" class="form-control"  name="Nom" id="name" 
-                            required [(ngModel)]="hotel.name" />
+                    <div class="row">
+                        <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                                <label for="name">Nom</label>
+                                <input type="text" class="form-control" name="Nom" id="name" required
+                                    [(ngModel)]="hotel.name" [ngModelOptions]="{standalone: true}"  formControlName="name"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-1">
+                            <div class="form-group">
+                                <label>Ville</label>
+                                <input list="ville" class="form-control" name="ville" id="ville"
+                                 required [(ngModel)]="hotel.city" [ngModelOptions]="{standalone: true}" formControlName="city"/>
+                                <datalist id="ville">
+                                    <option value="Tunis"></option>
+                                    <option value="Sfax"></option>
+                                    <option value="Sousse"></option>
+                                    <option value="Kairouan"></option>
+                                    <option value="Bizerte"></option>
+                                    <option value="Gabes"></option>
+                                    <option value="Ariana"></option>
+                                    <option value="Gafsa"></option>
+                                    <option value="Monastir"></option>
+                                    <option value="Kasserine"></option>
+                                    <option value="Medenine"></option>
+                                    <option value="Nabeul"></option>
+                                    <option value="Tataouine"></option>
+                                    <option value="Béja"></option>
+                                    <option value="Le Kef"></option>
+                                    <option value="Mahdia"></option>
+                                    <option value="Jendouba"></option>
+                                    <option value="Tozeur"></option>
+                                    <option value="La Manouba"></option>
+                                    <option value="Siliana"></option>
+                                    <option value="Kébili"></option>
+                                    <option value="Zaghouan"></option>
+                                    <option value="Ben Arous"></option>
+                                </datalist>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 pl-1">
-                        <div class="form-group">
-                            <label>Ville</label>
-                            <input list="ville" class="form-control">
-                            <datalist id="ville">
-                                <option value="Tunis">
-                                    <option value="Sfax">
-                                    <option value="Sousse">
-                                    <option value="Kairouan">
-                                    <option value="Bizerte">
-                                    <option value="Gabes">
-                                    <option value="Ariana">
-                                    <option value="Gafsa">
-                                    <option value="Monastir">
-                                    <option value="Kasserine">
-                                    <option value="Medenine">
-                                    <option value="Nabeul">
-                                    <option value="Tataouine">
-                                    <option value="Béja">
-                                    <option value="Le Kef">
-                                    <option value="Mahdia">
-                                    <option value="Jendouba">
-                                    <option value="Tozeur">
-                                    <option value="La Manouba">
-                                    <option value="Siliana">
-                                    <option value="Kébili">
-                                    <option value="Zaghouan">
-                                    <option value="Ben Arous">
-                            </datalist>                        
-                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Adresse</label>
-                            <input type="text" class="form-control"
-                            />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Adresse</label>
+                                <input type="text" class="form-control" name="adresse" id="address" required
+                                    [(ngModel)]="hotel.address" [ngModelOptions]="{standalone: true}"  formControlName="address"/>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 pr-1">
-                        <div class="form-group">
-                            <label>Nombre des chambres</label>
-                            <input type="number" class="form-control" value="Melbourne" />
+                    <div class="row">
+                        <div class="col-md-4 pr-1">
+                            <div class="form-group">
+                                <label>Nombre des chambres</label>
+                                <input type="number" class="form-control" name="roomsNumber" id="roomsNumber" required
+                                    [(ngModel)]="hotel.roomsNumber" [ngModelOptions]="{standalone: true}"  formControlName="roomsNumber"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-1">
+                            <div class="form-group">
+                                <label>Etoiles</label>
+                                <input type="number" class="form-control" name="stars" id="stars" required
+                                    [(ngModel)]="hotel.stars" [ngModelOptions]="{standalone: true}"  formControlName="stars"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pl-1">
+                            <div class="form-group">
+                                <label>Numéro telephone</label>
+                                <input type="text" class="form-control" name="phone" id="phone" required
+                                    [(ngModel)]="hotel.phone" [ngModelOptions]="{standalone: true}"  formControlName="phone"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 px-1">
-                        <div class="form-group">
-                            <label>Etoiles</label>
-                            <input type="number" class="form-control" name="Stars" min="1" max="5"/>
-                        </div>
-                    </div>
-                    <div class="col-md-4 pl-1">
-                        <div class="form-group">
-                            <label>Numéro telephone</label>
-                            <input type="number" class="form-control"  name="Phone" />
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-4 pr-1">
-                        <div class="form-group">
-                            <label>Prix minimum</label>
-                            <input type="text" class="form-control" />
+                    <div class="row">
+                        <div class="col-md-4 pr-1">
+                            <div class="form-group">
+                                <label>Prix minimum</label>
+                                <input type="number" class="form-control" name="minPrice" id="minPrice" required
+                                    [(ngModel)]="hotel.minPrice" [ngModelOptions]="{standalone: true}"  formControlName="minPrice"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-1">
+                            <div class="form-group">
+                                <label>Prix maximum</label>
+                                <input type="number" class="form-control" name="maxPrice" id="maxPrice" required
+                                    [(ngModel)]="hotel.maxPrice" [ngModelOptions]="{standalone: true}"  formControlName="maxPrice"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pl-1">
+                            <div class="form-group">
+                                <label>Disponibilité</label>
+                                <input list="dispo" class="form-control" required
+                                 [(ngModel)]="hotel.available" [ngModelOptions]="{standalone: true}"  formControlName="available"
+                                name="dispo" id="dispo" />
+                                <datalist id="dispo">
+                                    <option value="Disponible"></option>
+                                    <option value="Indisponible"></option>
+                                </datalist>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 px-1">
-                        <div class="form-group">
-                            <label>Prix maximum</label>
-                            <input type="text" class="form-control" name="Stars" />
-                        </div>
-                    </div>
-                    <div class="col-md-4 pl-1">
-                        <div class="form-group">
-                            <label>Disponibilité</label>
-                            <input list="dispo" class="form-control">
-                            <datalist id="dispo">
-                              <option value="Disponible">
-                              <option value="Indisponible">
-                            </datalist>                    
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Desctiption</label>
-                            <textarea class="form-control textarea" name="Description">
-                            </textarea>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control textarea" name="description" id="description" required
+                                    [(ngModel)]="hotel.description" [ngModelOptions]="{standalone: true}"  formControlName="description">
+                </textarea>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="update ml-auto mr-auto">
-                        <button type="submit" class="btn btn-primary btn-round" (click)="saveHotel()">
-                            Ajouter
-                        </button>
-                        
+                    <div class="row">
+                        <div class="update ml-auto mr-auto">
+                            <button  type="submit" [disabled]="!hotelForm.valid" class="btn btn-primary btn-block"
+                                (click)="saveHotel(); showNotification('top', 'center')">
+                                Ajouter
+                            </button>
+                        </div>
                     </div>
-                    
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </div>
