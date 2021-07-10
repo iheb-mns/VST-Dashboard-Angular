@@ -1,1 +1,50 @@
-<p>reservations-table works!</p>
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Liste des réservations</h4>
+        </div>
+        
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <th>Hotel</th>
+                <th>User</th>
+                <th>Type de chambre</th>
+                <th>Prix total</th>
+                <th>Date d'arrivée</th>
+                <th>Date de départ</th>
+                <th>Status</th>
+                <th class="text-right">Accepter</th>
+                <th class="text-right">Refuser</th>
+              </thead>
+  
+              <tbody>
+                <tr *ngFor="let b of bookings">
+                  <td>{{ b.hotel }}</td>
+                  <td>user</td>
+                  <td>{{ b.roomType }}</td>
+                  <td>{{ b.totalPrice }}</td>
+                  <td>{{ b.checkInDate }}</td>
+                  <td>{{ b.checkOutDate }}</td>
+                  <td>{{ b.status }}</td>
+  
+                  <td class="text-right">
+                    <button class="btn btn-sm btn-outline-success btn-round btn-icon"
+                     (click)="acceptBooking(b.id)"><i class="fa fa-edit"></i></button>
+                  </td>
+  
+                  <td class="text-right"> 
+                    <button class="btn btn-sm btn-outline-danger btn-round btn-icon"
+                    (click)="declineBooking(b.id)"><i class="fa fa-trash"></i></button>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

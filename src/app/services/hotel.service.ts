@@ -38,4 +38,8 @@ export class HotelService {
   findByTitle(title: any): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(`${baseUrl}?title=${title}`);
   }
+
+  getCount(): Observable<Hotel[]> {
+    return this.http.get<Hotel[]>(`${baseUrl}/countHotels`);
+  }
 }

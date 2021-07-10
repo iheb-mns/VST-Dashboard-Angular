@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { HotelService } from '../../services/hotel.service';
+
 
 
 @Component({
@@ -15,8 +17,14 @@ export class DashboardComponent implements OnInit{
   public chartColor;
   public chartEmail;
   public chartHours;
+  public hotelCount : any;
+
+  constructor(private hotelService: HotelService) { }
+
 
     ngOnInit(){
+      this.retrieveCountHotels();
+
       this.chartColor = "#FFFFFF";
 
       this.canvas = document.getElementById("chartHours");
@@ -205,5 +213,17 @@ export class DashboardComponent implements OnInit{
         data: speedData,
         options: chartOptions
       });
+    }
+
+    retrieveCountHotels(): void {
+      this.hotelService.getCount()
+        .subscribe(
+          data => {
+            this.hotelCount = data;
+            console.log(data);
+          },
+          error => {
+            console.log(error);
+          });
     }
 }

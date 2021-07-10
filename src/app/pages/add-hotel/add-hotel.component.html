@@ -20,7 +20,7 @@
                         <div class="col-md-6 pl-1">
                             <div class="form-group">
                                 <label>Ville</label>
-                                <input list="ville" class="form-control" name="ville" id="ville"
+                                <input list="ville" class="form-control" name="ville" 
                                  required [(ngModel)]="hotel.city" [ngModelOptions]="{standalone: true}" formControlName="city"/>
                                 <datalist id="ville">
                                     <option value="Tunis"></option>
@@ -47,6 +47,7 @@
                                     <option value="Zaghouan"></option>
                                     <option value="Ben Arous"></option>
                                 </datalist>
+                                
                             </div>
                         </div>
                     </div>
@@ -103,7 +104,7 @@
                                 <label>Disponibilité</label>
                                 <input list="dispo" class="form-control" required
                                  [(ngModel)]="hotel.available" [ngModelOptions]="{standalone: true}"  formControlName="available"
-                                name="dispo" id="dispo" />
+                                name="dispo"/>
                                 <datalist id="dispo">
                                     <option value="Disponible"></option>
                                     <option value="Indisponible"></option>
