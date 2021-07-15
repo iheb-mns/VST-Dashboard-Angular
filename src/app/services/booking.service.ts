@@ -27,4 +27,8 @@ export class BookingService {
     return this.http.put(`${baseUrl}/decline/${id}`, status);
   }
 
+  getCount(): Observable<Booking[]> {
+    return this.http.get<Booking[]>(`${baseUrl}/countBookings`);
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
+import { BookingService } from 'app/services/booking.service';
 import Chart from 'chart.js';
 import { HotelService } from '../../services/hotel.service';
 
@@ -18,12 +20,17 @@ export class DashboardComponent implements OnInit{
   public chartEmail;
   public chartHours;
   public hotelCount : any;
+  public bookingCount: any;
+  public userCount: any;
 
-  constructor(private hotelService: HotelService) { }
+  constructor(private hotelService: HotelService, private bookingService: BookingService,
+    private authService: AuthService) { }
 
 
     ngOnInit(){
       this.retrieveCountHotels();
+      this.retrieveCountBookings();
+      this.retrieveCountUsers();
 
       this.chartColor = "#FFFFFF";
 
@@ -220,6 +227,30 @@ export class DashboardComponent implements OnInit{
         .subscribe(
           data => {
             this.hotelCount = data;
+            console.log(data);
+          },
+          error => {
+            console.log(error);
+          });
+    }
+
+    retrieveCountBookings(): void {
+      this.bookingService.getCount()
+        .subscribe(
+          data => {
+            this.bookingCount = data;
+            console.log(data);
+          },
+          error => {
+            console.log(error);
+          });
+    }
+
+    retrieveCountUsers(): void {
+      this.authService.getCount()
+        .subscribe(
+          data => {
+            this.userCount = data;
             console.log(data);
           },
           error => {

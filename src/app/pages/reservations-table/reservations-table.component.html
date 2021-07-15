@@ -21,9 +21,9 @@
               </thead>
   
               <tbody>
-                <tr *ngFor="let b of bookings">
-                  <td>{{ b.hotel }}</td>
-                  <td>user</td>
+                <tr *ngFor="let b of bookings"> 
+                  <td>{{ b.hotel.name }}</td>
+                  <td>{{ b.user.name }}</td>
                   <td>{{ b.roomType }}</td>
                   <td>{{ b.totalPrice }}</td>
                   <td>{{ b.checkInDate }}</td>

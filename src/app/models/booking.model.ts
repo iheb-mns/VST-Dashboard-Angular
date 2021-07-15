@@ -7,5 +7,6 @@ export class Booking {
     checkOutDate?: any;
     status?: any;
     hotel?: any;
+    user?: any;
   }
   
