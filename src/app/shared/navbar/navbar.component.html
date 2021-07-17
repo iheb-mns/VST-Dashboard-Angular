@@ -47,7 +47,7 @@
 
         <a *ngIf="!this.authService.isLoggedIn" class="btn btn-outline-primary" routerLinkActive="active"
         routerLinkActive="active" routerLink="/sign-up">Sign up</a>
-      <button (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button" class="btn btn-danger">Logout</button>
+      <button (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button" class="btn btn-danger">Se déconnecter</button>
 
       </ul>
     </div>
